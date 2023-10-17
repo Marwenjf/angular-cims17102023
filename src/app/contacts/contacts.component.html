@@ -1,0 +1,21 @@
+<ul>
+    <li>{{infos.name}}</li>
+    <li>{{infos.email}}</li>
+    <li>{{infos.phone}}</li>
+</ul>
+<br>
+<label >Your Comment</label>
+<input type="text" [(ngModel)]="comment.message">
+<button (click)="addComment()" [disabled]="comment.message==''">Add Comment</button>
+
+<div *ngIf="comments.length>0;else errorTemplate">
+     <ul>
+        <li *ngFor="let c of comments">
+            <app-comment-detail [item]="c"></app-comment-detail>
+        </li>
+     </ul>
+</div>
+
+<ng-template #errorTemplate>
+    <div class="error">Data Not Found</div>
+</ng-template>

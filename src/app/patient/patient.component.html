@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            Patients List
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+               <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Active</th>
+                </tr>
+               </thead>
+               <tbody>
+                <tr *ngFor="let p of patients">
+                      <td>{{p.id}}</td>
+                      <td>{{p.name}}</td>
+                      <td>{{p.age}}</td>
+                      <td [ngClass]="p.active==true?'text-success':'text-danger'">
+                        <span  *ngIf="p.active==true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span  *ngIf="p.active==false"><i class="bi bi-x-circle-fill"></i></span>
+                      </td>
+                      <td>
+                        <button (click)="handleActivate(p.id)" class="btn" [ngClass]="p.active==true?'btn-danger':'btn-success'">
+                            <span *ngIf="p.active==true">Deactivate</span>
+                            <span *ngIf="p.active==false">Activate</span>
+                        </button>
+                      </td>
+                      <td>
+                        <button (click)="handleDelete(p.id)" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                      
+                </tr>
+               </tbody> 
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<h4>{{counter}}</h4>
+<input type="number" [(ngModel)]="counter">
+<button (click)="add()" [disabled]="counter==10">inc</button>
+<button (click)="del()" [disabled]="counter==0">dec</button>
