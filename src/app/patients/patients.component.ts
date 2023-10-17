@@ -3,11 +3,11 @@ import { PatientService } from '../services/patient.service';
 import { Patient } from '../models/patient.model';
 
 @Component({
-  selector: 'app-patient',
-  templateUrl: './patient.component.html',
-  styleUrls: ['./patient.component.css']
+  selector: 'app-patients',
+  templateUrl: './patients.component.html',
+  styleUrls: ['./patients.component.css']
 })
-export class PatientComponent implements OnInit {
+export class PatientsComponent implements OnInit {
   patients!: Array<Patient>
   constructor(
     private patientService:PatientService

@@ -8,7 +8,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
 import { CommentDetailComponent } from './comment-detail/comment-detail.component';
 import { MedicamentsComponent } from './medicaments/medicaments.component';
-import { PatientComponent } from './patient/patient.component';
+import { PatientsComponent } from './patients/patients.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 
@@ -19,7 +19,7 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
     ContactsComponent,
     CommentDetailComponent,
     MedicamentsComponent,
-    PatientComponent,
+    PatientsComponent,
     NavBarComponent,
     AddPatientComponent
   ],
