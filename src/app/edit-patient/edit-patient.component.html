@@ -1,27 +1,25 @@
 <div class="container">
     <div class="row mt-3">
          <div class="col-md-6 offset-md-3">
-            <form [formGroup]="patientFormGroup" (ngSubmit)="addPatient()">
+            <form [formGroup]="editPatientFormGroup" (ngSubmit)="editPatient()">
+                <div class="mb-3">
+                    <label class="form-label">Id</label>
+                    <input type="text" class="form-control" formControlName="id" readonly>
+                </div>
                 <div class="mb-3">
                     <label class="form-label">Name</label>
                     <input type="text" class="form-control" formControlName="name">
-                    <small class="text-danger" *ngIf="(patientFormGroup.controls['name'].touched || submitted) && patientFormGroup.controls['name'].errors">
-                      {{ validationError.getErrorMessage('Name',patientFormGroup.controls['name'].errors)}}  
-                    </small>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Age</label>
                     <input type="number" class="form-control" formControlName="age">
-                    <small class="text-danger" *ngIf="(patientFormGroup.controls['age'].touched || submitted) && patientFormGroup.controls['age'].errors">
-                        {{ validationError.getErrorMessage('Age',patientFormGroup.controls['age'].errors)}}  
-                      </small>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Active</label>
                     <input type="checkbox" class="form-check" formControlName="active">
                 </div>
                 <div class="d-grid">
-                    <button class="btn btn-success" type="submit">Add Patient</button>
+                    <button class="btn btn-success" type="submit">Edit Patient</button>
                 </div>
             </form>
          </div>
