@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommentDetailComponent } from './comment-detail/comment-detail.component';
 import { MedicamentsComponent } from './medicaments/medicaments.component';
 import { PatientsComponent } from './patients/patients.component';
@@ -26,7 +26,8 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

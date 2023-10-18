@@ -1,1 +1,77 @@
-<p>add-patient works!</p>
+<div class="container">
+    <div class="row mt-3">
+         <div class="col-md-6 offset-md-3">
+            <form [formGroup]="patientFormGroup" (ngSubmit)="addPatient()">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                    <small class="text-danger" *ngIf="(patientFormGroup.controls['name'].touched || submitted) && patientFormGroup.controls['name'].errors">
+                      {{ patienService.getErrorMessage('Name',patientFormGroup.controls['name'].errors)}}  
+                    </small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Age</label>
+                    <input type="number" class="form-control" formControlName="age">
+                    <small class="text-danger" *ngIf="(patientFormGroup.controls['age'].touched || submitted) && patientFormGroup.controls['age'].errors">
+                        {{ patienService.getErrorMessage('Age',patientFormGroup.controls['age'].errors)}}  
+                      </small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Active</label>
+                    <input type="checkbox" class="form-check" formControlName="active">
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-success" type="submit">Add Patient</button>
+                </div>
+            </form>
+         </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6 offset-md-3">
+            {{patientFormGroup.controls['name'].errors | json}}
+            <form [formGroup]="patientFormGroup" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                    <small
+                        *ngIf="(patientFormGroup.controls['name'].touched || submitted) && patientFormGroup.controls['name'].errors"
+                        class="text-danger">
+                        {{patientService.getErrorMessage('Name',patientFormGroup.controls['name'].errors)}}
+                    </small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Age</label>
+                    <input type="number" class="form-control" formControlName="age">
+                    <small
+                        *ngIf="(patientFormGroup.controls['age'].touched || submitted) && patientFormGroup.controls['age'].errors"
+                        class="text-danger">
+                        {{patientService.getErrorMessage('Age',patientFormGroup.controls['age'].errors)}}
+                    </small>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Active</label>
+                    <input type="checkbox" class="form-check">
+                    <small
+                        *ngIf="patientFormGroup.controls['active'].errors && patientFormGroup.controls['active'].touched"
+                        class="text-danger">
+                        {{patientService.getErrorMessage('Active',patientFormGroup.controls['active'].errors)}}
+                    </small>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-success" type="submit">Add Patient</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>-->
